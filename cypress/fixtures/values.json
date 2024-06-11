@@ -1,0 +1,32 @@
+{
+    "webInputs": {
+      "tabName": "Web inputs",
+      "tabexplainertext": "This is an example of using input fields such as numbers, text, passwords, or dates on a website",
+      "inputNumber": "29",
+      "inputText": "Suriya",
+      "inputpassword": "Nb_98",
+      "inputdate": "1998-03-29"
+    },
+    "AddorRemoveElements": {
+      "tabName": "Add/Remove Elements",
+      "tabexplainertext": "Dynamically adding and removing web elements",
+      "inputNumber": "42",
+      "inputText": "John",
+      "inputpassword": "Passw0rd",
+      "inputdate": "2000-01-01",
+      "addcount" : "6",
+      "deletecount" : "3"
+    },
+    "dynamictable" : {
+      "tabName": "Dynamic Table",
+      "tabexplainertext": "Generating dynamic table content on every page load can be used as a practice exercise to verify cell values in a dynamic table",
+    "BrowserName": "Chrome",
+    "valuetobefetched":"%"
+    },
+    "radiobutton" : {
+      "tabName": "Radio Buttons",
+      "tabexplainertext": "Radio Buttons example can be used for practicing automated tests"
+
+    }
+
+}

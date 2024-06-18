@@ -1,5 +1,6 @@
 class webinputs{
-//newchange update
+=======
+//newchange from mainbranch
 constructor(){
     this.cssSelector = {
         inputnumber: '#input-number',

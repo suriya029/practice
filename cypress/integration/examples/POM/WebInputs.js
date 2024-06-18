@@ -1,5 +1,4 @@
 class webinputs{
-=======
 //newchange from mainbranch
 constructor(){
     this.cssSelector = {

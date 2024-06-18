@@ -6,9 +6,9 @@ cy.visit('https://www.amazon.in/ref=nav_logo')
 cy.get('div .nav-fill > div > form').type("hp elitebook g5")
 cy.wait(2000)
 cy.get('.left-pane-results-container').find('div[role="button"]').each(($e1,index,$list)=>{
-    const prodsuggession=$e1.attr('aria-label')
+    let prodsuggession=$e1.attr('aria-label')
     if(prodsuggession==='hp elitebook g5 i5 8th generation'){
-$e1.click()
+cy.wrap($e1).click()
     }
 })
 cy.get('span[data-component-type="s-search-results"]').find('div[data-asin]')

@@ -2,19 +2,24 @@ import { default as homepage } from "./POM/HomePage"
 import webinputs from "./POM/WebInputs"
 import addorremove from "./POM/addorremoveelements"
 import dynamictble from "./POM/DynamicTable"
+import fileupload from "./POM/uploadfile"
+import 'cypress-file-upload';
+
 
 describe('Automation Testing Practice Website for UI',function(){
 
-    var homepge
-    var webinpts
-    var addorrmw
-    var dyntble
+    let homepge
+    let webinpts
+    let addorrmw
+    let dyntble
+    let upload
 
     before(function(){
         homepge = new homepage()
         webinpts = new webinputs()
         addorrmw = new addorremove()
         dyntble = new dynamictble()
+        upload = new fileupload()
         
 //cy.visit('https://practice.expandtesting.com/')
     })
@@ -29,7 +34,7 @@ describe('Automation Testing Practice Website for UI',function(){
     })
 
 
-it('click on Web Inputs page',()=>{
+it('click on Web Inputs page',function(){
     cy.example_and_exptext(homepge.Getexamplename(),this.data.webInputs.tabName,homepge.Getexampleexptext(),this.data.webInputs.tabexplainertext)
 
       
@@ -75,7 +80,7 @@ it('Click on add/remove elements',function(){
 it('Dynamic table',function(){
     let percentage;
     cy.example_and_exptext(homepge.Getexamplename(),this.data.dynamictable.tabName,homepge.Getexampleexptext(),this.data.dynamictable.tabexplainertext)
-    dyntble.tablecolumns().each(($e1,index,$list),function(){
+    dyntble.tablecolumns().each(($e1,index,$list)=>{
     if($e1.text().includes(this.data.dynamictable.BrowserName)){
       cy.log($e1.text())
     cy.wrap($e1).contains(this.data.dynamictable.valuetobefetched).then(function(a){
@@ -99,6 +104,16 @@ cy.get('#blue').should('be.enabled')
 cy.get('#tennis').should('be.enabled')
 cy.get('#yellow').click().should('be.enabled')
 //newchange
+})
+it.only('upload a file',function(){
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        // returning false here prevents Cypress
+        return false
+      })
+    cy.example_and_exptext(homepge.Getexamplename(),this.data.fileupload.tabName,homepge.Getexampleexptext(),this.data.fileupload.tabexplainertext)
+    upload.uploadbtn().attachFile('Suriya S - Automation QA.pdf');   
+    upload.submitbtn().click()
+   upload.successtxt().should('have.text',this.data.fileupload.successtxt)
 })
 
 

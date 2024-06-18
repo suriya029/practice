@@ -10,6 +10,7 @@
 //
 //
 // -- This is a parent command --
+
 Cypress.Commands.add('example_and_exptext', (ExampleNamecss, tabHeadername,Egexptextcss,tabexplainertext ) => { 
     ExampleNamecss.find('a').each(($e1,index,$list)=>{
     if($e1.text()=== tabHeadername){
@@ -25,7 +26,12 @@ Cypress.Commands.add('example_and_exptext', (ExampleNamecss, tabHeadername,Egexp
 return result
 })
 
-//
+
+   
+ 
+
+//uncaught exception
+
 //
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })

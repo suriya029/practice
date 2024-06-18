@@ -27,6 +27,11 @@
       "tabName": "Radio Buttons",
       "tabexplainertext": "Radio Buttons example can be used for practicing automated tests"
 
+    },
+    "fileupload" : {
+    "tabName": "File Upload",
+      "tabexplainertext": "Example can be used for practicing upload files scenario in automated tests",
+      "successtxt" :"File Uploaded!"
     }
 
 }

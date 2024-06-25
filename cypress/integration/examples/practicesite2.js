@@ -105,7 +105,7 @@ cy.get('#tennis').should('be.enabled')
 cy.get('#yellow').click().should('be.enabled')
 //newchange
 })
-it.only('upload a file',function(){
+it('upload a file',function(){
     Cypress.on('uncaught:exception', (err, runnable) => {
         // returning false here prevents Cypress
         return false

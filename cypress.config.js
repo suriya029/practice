@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
 
+
 module.exports = defineConfig({
   projectId: "s715f5",
   e2e: {
@@ -11,4 +12,5 @@ module.exports = defineConfig({
   env: {
     url : 'https://practice.expandtesting.com/'
       },
+     
 });

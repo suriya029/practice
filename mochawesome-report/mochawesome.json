@@ -1,0 +1,176 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-25T15:52:10.356Z",
+    "end": "2024-06-25T15:52:40.797Z",
+    "duration": 30441,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "51f47b97-07f0-4b17-b915-79fac7929090",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\practicesite2.js",
+      "file": "cypress\\integration\\examples\\practicesite2.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bfb56560-c75e-4731-ac9c-40a323b5360c",
+          "title": "Automation Testing Practice Website for UI",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "click on Web Inputs page",
+              "fullTitle": "Automation Testing Practice Website for UI click on Web Inputs page",
+              "timedOut": null,
+              "duration": 7412,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.example_and_exptext(homepge.Getexamplename(), this.data.webInputs.tabName, homepge.Getexampleexptext(), this.data.webInputs.tabexplainertext);\nwebinpts.inputNumber().type(this.data.webInputs.inputNumber);\nwebinpts.inputText().type(this.data.webInputs.inputText);\nwebinpts.inputPassword().type(this.data.webInputs.inputpassword);\nwebinpts.inputDate().type(this.data.webInputs.inputdate);\ncy.contains('Display Inputs').click();\nwebinpts.inputNumber().should('have.value', this.data.webInputs.inputNumber);\nwebinpts.inputText().should('have.value', this.data.webInputs.inputText);\nwebinpts.inputPassword().should('have.value', this.data.webInputs.inputpassword);\nwebinpts.inputDate().should('have.value', this.data.webInputs.inputdate);",
+              "err": {},
+              "uuid": "b0992178-0c0c-4595-8711-0b33ec03d0d8",
+              "parentUUID": "bfb56560-c75e-4731-ac9c-40a323b5360c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Click on add/remove elements",
+              "fullTitle": "Automation Testing Practice Website for UI Click on add/remove elements",
+              "timedOut": null,
+              "duration": 5219,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let count = 0;\ncy.example_and_exptext(homepge.Getexamplename(), this.data.AddorRemoveElements.tabName, homepge.Getexampleexptext(), this.data.AddorRemoveElements.tabexplainertext);\n//var addcount = 6;\nfor (let i = 0; i < this.data.AddorRemoveElements.addcount; i++) {\n  addorrmw.addelementbtn().click();\n}\n//var deletecount = 3;\nif (this.data.AddorRemoveElements.deletecount > this.data.AddorRemoveElements.addcount) {\n  cy.log('Given number is incorrect please provide a number less than ' + this.data.AddorRemoveElements.addcount);\n} else {\n  addorrmw.deletebtngrp().each(($e1, index, $list) => {\n    //for(let i = 0; i<deletecount; i++){\n    if (index < this.data.AddorRemoveElements.deletecount) {\n      cy.wrap($e1).click();\n    }\n  });\n  addorrmw.deletebtngrp().then(function (count) {\n    cy.log(count.length);\n  });\n}",
+              "err": {},
+              "uuid": "a1ef0000-ce60-42a6-982a-ade5573f3af1",
+              "parentUUID": "bfb56560-c75e-4731-ac9c-40a323b5360c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Dynamic table",
+              "fullTitle": "Automation Testing Practice Website for UI Dynamic table",
+              "timedOut": null,
+              "duration": 5977,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let percentage;\ncy.example_and_exptext(homepge.Getexamplename(), this.data.dynamictable.tabName, homepge.Getexampleexptext(), this.data.dynamictable.tabexplainertext);\ndyntble.tablecolumns().each(($e1, index, $list) => {\n  if ($e1.text().includes(this.data.dynamictable.BrowserName)) {\n    cy.log($e1.text());\n    cy.wrap($e1).contains(this.data.dynamictable.valuetobefetched).then(function (a) {\n      percentage = a.text();\n      cy.log(percentage);\n    });\n    dyntble.chromeyellowpercent().then(function (a) {\n      let b = a.text().match(/(\\d+(\\.\\d+)?)%/);\n      cy.log(b[0]);\n      expect(percentage).to.eq(b[0]);\n    });\n  }\n});",
+              "err": {},
+              "uuid": "f08f994f-5d37-465b-a566-b38b7409feef",
+              "parentUUID": "bfb56560-c75e-4731-ac9c-40a323b5360c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Radio buttons",
+              "fullTitle": "Automation Testing Practice Website for UI Radio buttons",
+              "timedOut": null,
+              "duration": 3412,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.example_and_exptext(homepge.Getexamplename(), this.data.radiobutton.tabName, homepge.Getexampleexptext(), this.data.radiobutton.tabexplainertext);\ncy.get('#blue').should('be.enabled');\ncy.get('#tennis').should('be.enabled');\ncy.get('#yellow').click().should('be.enabled');\n//newchange",
+              "err": {},
+              "uuid": "a347d002-3e6a-4e6c-b9d1-0b2221b0a7c7",
+              "parentUUID": "bfb56560-c75e-4731-ac9c-40a323b5360c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "upload a file",
+              "fullTitle": "Automation Testing Practice Website for UI upload a file",
+              "timedOut": null,
+              "duration": 5142,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "Cypress.on('uncaught:exception', (err, runnable) => {\n  // returning false here prevents Cypress\n  return false;\n});\ncy.example_and_exptext(homepge.Getexamplename(), this.data.fileupload.tabName, homepge.Getexampleexptext(), this.data.fileupload.tabexplainertext);\nupload.uploadbtn().attachFile('Suriya S - Automation QA.pdf');\nupload.submitbtn().click();\nupload.successtxt().should('have.text', this.data.fileupload.successtxt);",
+              "err": {},
+              "uuid": "eefc6609-d66c-44ad-8c50-21f7f5e814a6",
+              "parentUUID": "bfb56560-c75e-4731-ac9c-40a323b5360c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b0992178-0c0c-4595-8711-0b33ec03d0d8",
+            "a1ef0000-ce60-42a6-982a-ade5573f3af1",
+            "f08f994f-5d37-465b-a566-b38b7409feef",
+            "a347d002-3e6a-4e6c-b9d1-0b2221b0a7c7",
+            "eefc6609-d66c-44ad-8c50-21f7f5e814a6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 27162,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

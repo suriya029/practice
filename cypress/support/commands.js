@@ -26,11 +26,33 @@ Cypress.Commands.add('example_and_exptext', (ExampleNamecss, tabHeadername,Egexp
 return result
 })
 
+Cypress.Commands.add('Google_search_and_select_from_search_result',(searchquery,URLheading)=>{
+    let searchresult = []
+    cy.visit('https://www.google.com/')
+        cy.get('.gLFyf').type(searchquery+'{enter}').then(function(then){
+            cy.get('h3[class="LC20lb MBeuO DKV0Md"]').each(($e1,index,$list)=>{
+            searchresult.push($e1.text())
+            cy.log(searchresult[index])
+            if(searchresult[index]===URLheading){
+                cy.wrap($e1).click()
+            }
 
+        })
+    
+    })
+    //return searchresult;
+
+
+}
+)
    
  
 
 //uncaught exception
+cy.on('uncaught:exception', (err, runnable) => {
+    // Return false to prevent the error from failing the test
+    return false;
+});
 
 //
 // -- This is a child command --
